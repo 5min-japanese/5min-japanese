@@ -1,0 +1,373 @@
+---
+---
+
+$text-color: #000000;
+$table-border-color: #888888;
+$table-header-backgound-color: #eeeeee;
+$attension-color: #ff4444;
+$attension-background-color: #ffdddd;
+$weak-color: #cccccc;
+$sound-color: #888888;
+$code-color: $attension-color;
+$code-background-color: $attension-background-color;
+
+html, body {
+  margin: 0 auto;
+  width: 100%;
+  font-size: large;
+  color: $text-color;
+}
+
+code {
+  color: $code-color;
+  background-color: $code-background-color;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  tr {
+    width: 100%;
+
+    th,td {
+      border: solid 1px $table-border-color;
+      padding: 4px;
+      text-align: center;
+      vertical-align: middle;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      span.ej-dakuon,span.ej-handakuon {
+        display: none;
+      }
+
+      p:first-child {
+        font-size: x-large;
+      }
+
+      p:last-child {
+        color: $sound-color;
+      }
+    }
+
+    th {
+      background-color: $table-header-backgound-color;
+    }
+
+    td.ej-blank p {
+      display: none;
+    }
+
+    td.ej-blank {
+      color: $weak-color;
+
+      p:last-child {
+        color: $weak-color;
+      }
+    }
+
+    td.ej-none {
+      border: none;
+    }
+  }
+}
+
+table.ej-hiragana-ex-sound {
+  width: 33.3%;
+}
+
+table.ej-hiragana-extra {
+  width: 66.7%;
+  tr td.ej-ji {
+    color: $weak-color;
+    p {
+      color: $weak-color;
+    }
+  }
+}
+
+table.ej-hiragana.ej-initial {
+  tr {
+    th {
+      display: none;
+    }
+    td {
+      p:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+table.ej-hiragana.ej-consonant {
+  tr td p:last-child {
+    display: none;
+  }
+  tr:first-child {
+    th:not(:first-child) {
+      background: $attension-background-color;
+    }
+    th:last-child {
+      display: none;
+    }
+  }
+  tr:not(:first-child) th {
+    display: none;
+  }
+}
+
+table.ej-hiragana.ej-vowel {
+  tr td:not(.ej-n):not(.ej-long):not(.ej-ex-sound) p:last-child {
+    color: $attension-color;
+  }
+  tr:not(:first-child) th {
+    background-color: $attension-background-color;
+  }
+}
+
+table.ej-hiragana.ej-ex-sound {
+  tr td.ej-ex-sound {
+    background-color: $attension-background-color;
+
+    p {
+      color: $attension-color;
+    }
+  }
+}
+
+table.ej-hiragana-ex-sound.ej-ti {
+  tr td.ej-ti {
+    background-color: $attension-background-color;
+
+    p {
+      color: $attension-color;
+    }
+  }
+}
+
+table.ej-hiragana-ex-sound.ej-tu {
+  tr td.ej-tu {
+    background-color: $attension-background-color;
+
+    p {
+      color: $attension-color;
+    }
+  }
+}
+
+table.ej-hiragana.ej-blank {
+  tr td.ej-blank {
+    background-color: $attension-background-color;
+  }
+}
+
+table.ej-hiragana.ej-blank-avaibale {
+  tr td.ej-blank:not(.ej-yi):not(.ej-wu) {
+    background-color: $attension-background-color;
+
+    p {
+      color: $attension-color;
+      display: block;
+    }
+  }
+}
+
+table.ej-hiragana.ej-we {
+  tr td.ej-blank.ej-we {
+    background-color: $attension-background-color;
+
+    p {
+      color: $attension-color;
+      display: block;
+    }
+  }
+  tr td.ej-blank:not(.ej-yi):not(.ej-wu) {
+    p {
+      color: $attension-color;
+      display: block;
+    }
+  }
+}
+
+table.ej-hiragana.ej-blank-unavaibale {
+  tr td.ej-blank.ej-yi,td.ej-blank.ej-wu {
+    background-color: $attension-background-color;
+
+    p {
+      color: $attension-color;
+      display: block;
+    }
+  }
+  tr td.ej-blank:not(.ej-yi):not(.ej-wu) {
+    p {
+      display: block;
+    }
+  }
+}
+
+table.ej-hiragana.ej-dakuon {
+  tr {
+    th,td {
+      color: $weak-color;
+
+      p {
+        color: $weak-color;
+      }
+
+      span.ej-normal {
+        display: none;
+      }
+      span.ej-dakuon {
+        display: inline;
+        color: $attension-color;
+      }
+    }
+    th.ej-dakuon,td.ej-dakuon {
+      background-color: $attension-background-color;
+    }
+    td.ej-ji,td.ej-tsu.ej-zu {
+      p:last-child {
+        span.ej-dakuon {
+          display: inline;
+          color: $sound-color;
+        }
+      }
+    }
+  }
+}
+
+table.ej-hiragana.ej-dakuon-ex-sound {
+  tr {
+    th,td {
+      color: $weak-color;
+
+      p {
+        color: $weak-color;
+      }
+
+      span.ej-normal {
+        display: none;
+      }
+      span.ej-dakuon {
+        display: inline;
+        color: $text-color;
+      }
+    }
+    th.ej-dakuon {
+      color: $text-color;
+    }
+    td.ej-ji,td.ej-tsu.ej-zu {
+      background-color: $attension-background-color;
+      p {
+        color: $attension-color;
+        span {
+          color: $attension-color;
+        }
+      }
+    }
+  }
+}
+
+table.ej-hiragana-ex-sound.ej-dakuon {
+  tr {
+    th,td {
+      color: $weak-color;
+
+      p {
+        color: $weak-color;
+      }
+
+      span.ej-normal {
+        display: none;
+      }
+      span.ej-dakuon {
+        display: inline;
+        color: $attension-color;
+      }
+    }
+    th.ej-dakuon,td.ej-dakuon {
+      background-color: $attension-background-color;
+    }
+  }
+}
+
+table.ej-hiragana.ej-handakuon {
+  tr {
+    th,td {
+      color: $weak-color;
+
+      p {
+        color: $weak-color;
+      }
+
+      span.ej-normal {
+        display: none;
+      }
+      span.ej-handakuon {
+        display: inline;
+        color: $attension-color;
+      }
+    }
+    th.ej-dakuon:not(.ej-handakuon),td.ej-dakuon:not(.ej-handakuon){
+      span.ej-dakuon {
+        display: inline;
+      }
+    }
+    th.ej-handakuon,td.ej-handakuon {
+      background-color: $attension-background-color;
+    }
+  }
+}
+
+table.ej-hiragana.ej-r-and-l {
+  tr {
+    th:nth-child(3),td:nth-child(3) {
+      color: $attension-color;
+      background-color: $attension-background-color;
+      p {
+        color: $attension-color;
+      }
+    }
+  }
+}
+
+table.ej-hiragana.ej-o-and-wo {
+  tr {
+    td.ej-o,td.ej-wo {
+      color: $attension-color;
+      background-color: $attension-background-color;
+      p {
+        color: $attension-color;
+      }
+    }
+  }
+}
+
+table.ej-hiragana.ej-ha-and-wa {
+  tr {
+    td.ej-ha,td.ej-wa {
+      color: $attension-color;
+      background-color: $attension-background-color;
+      p {
+        color: $attension-color;
+      }
+    }
+  }
+}
+
+table.ej-hiragana.ej-n {
+  tr {
+    td.ej-n {
+      color: $attension-color;
+      background-color: $attension-background-color;
+      p {
+        color: $attension-color;
+      }
+    }
+  }
+}
